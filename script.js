@@ -10,14 +10,36 @@ console.log(number)
 
 const messageSelector = () =>{
     if(number === 1){
-        return messages[0]
+        return introMessage + messages[0]
     } if (number === 2) {
-        return messages [1]
+        return introMessage + messages [1]
     } if (number === 3) {
-        return messages[2]
+        return introMessage + messages[2]
     } else {
         return "invalid entry"
     }
 };
 
+//console.log(messageSelector())
+
+//other examples 
+
+const welcomeNote = {
+    greeting: ["hello","Hi", "greetings","What's Up", "Bonjour","Who's there!!!!"],
+    introForm: ["I'm", "My name is", "Je suis", "Everybody call me"],
+    name: ["Mike", "Victor", "Brad", "Michel"],
+    lastName: ["Beauregard", "Cooper", "Paulnareff", "Budweiser"]
+}
+
+const creatMsg = obj => {
+    let salut = welcomeNote.greeting[Math.floor(Math.random() * welcomeNote.greeting.length)]
+    let form = welcomeNote.introForm[Math.floor(Math.random() * welcomeNote.introForm.length)]
+    let name = welcomeNote.name[Math.floor(Math.random() * welcomeNote.name.length)]
+    let surname = welcomeNote.lastName[Math.floor(Math.random() * welcomeNote.lastName.length)]
+
+    return `${salut} ${form} ${name} ${surname}.`
+};
+
+console.log(creatMsg(welcomeNote));
 console.log(messageSelector())
+
